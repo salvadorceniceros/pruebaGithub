@@ -1,0 +1,215 @@
+/* Reiniciar los valores del Navegador*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Colores para la pagina
+
+fondos: #EFFFFD Titulos: #006778 Subtítulos: #42C2FF enlaces: #FFD124 extra: #85F4FF
+
+*/
+
+.img{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* Estos son los estilos del body */
+
+/* body {
+    background-color: #EFFFFD;
+} */
+
+
+/*Estilos para header y navbar */
+
+.encabezado, .mimenu {
+    display: flex;
+    justify-content: space-between;
+    background-color: #f8f9f9;
+}
+
+.logo {
+    display: flex;
+    margin-top: 3px;
+    width: 10rem;
+}
+
+.mimenu, .encabezado{
+    position: sticky;
+    top: 0;
+}
+
+/* .mimenu {
+    padding-right: 100px;
+} */
+
+.mimenu ul li {
+    list-style-type: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 5px;
+    position: relative;
+}
+.mimenu{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: space-around;
+}
+.mimenu ul li:hover {
+    background-color: white;
+    color: rgb(190, 190, 190);
+}
+
+
+/* Estilos del sub-menu */
+
+.mimenu ul ul {
+    display: none;
+    position: absolute;
+}
+
+.mimenu ul li a {
+    text-decoration: none;
+    color: #006778;
+}
+
+.sub-menu {
+    background-color: white;
+    color: black;
+}
+
+.mimenu ul li:hover>ul {
+    display: block;
+    background-color: white;
+}
+
+main h2 h1 {
+    text-align: center;
+}
+
+
+
+main p {
+    text-align: justify;
+    margin: 0 10px;
+    padding-top: 10px;
+}
+
+p {
+    text-align: justify;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.clinicas {
+    display: flex;
+    justify-items: center;
+}
+
+.clinicas div{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+.clinicas div img {
+    width: 100%;
+    border: 3px solid white;
+    border-radius: 5px;
+    padding: 0 1px; 
+}
+.clinicas div a{
+    display: block;
+    text-decoration: none;
+    padding: 15px;
+}
+.noticias-eventos{
+    background-color: #F0F4F7;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;   
+}
+footer h3, h4 {
+    text-align: center;
+}
+
+footer {
+    margin-top: 15px;
+}
+.container{
+    display: grid;
+    height: 50vh;
+    grid-template-areas: "encabezado encabezado"
+                         "mimenu mimenu"
+                         "main main"
+                         "clinicas clinicas"
+                         "introduccion introduccion"
+                         "novedades novedades"
+                         "footer footer";
+}
+.encabezado{
+    grid-area: encabezado;
+    justify-content: center;
+}
+.mimenu{
+    grid-area: mimenu;
+    border: 1px solid black;
+}
+main{
+    grid-area: main;
+    text-align: center;
+}
+.clinicas{
+    grid-area: clinicas;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.introduccion{
+    grid-area: introduccion;
+}
+.novedades{
+    grid-area: novedades;
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    grid-area: footer;
+}
+
+@media screen and (min-width:745px) {
+    .container{
+        grid-template-areas: "encabezado encabezado encabezado"
+                             "mimenu mimenu mimenu"
+                             "main main main"
+                             "clinicas clinicas clinicas"
+                             "introduccion introduccion introduccion"
+                             "novedades novedades novedades"
+                             "footer footer footer";
+    }
+}
+@media screen and (min-width:1200px){
+    .clinicas div a{
+        display: block;
+    }
+    .container{
+        grid-template-areas: "encabezado mimenu mimenu mimenu"
+                             "main main main main"
+                             "clinicas clinicas clinicas clinicas"
+                             "introduccion introduccion introduccion introduccion"
+                             "novedades novedades novedades novedades"
+                             "footer footer footer footer";
+    }
+    .mimenu{
+        border: none;
+    }
+}
